@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
             try {
                 Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.cat);
                 long start = System.currentTimeMillis();
-                doBlurJniBitMap(bmp, 44, false);
+                Bitmap out = doBlurJniBitMap(bmp, 44, false);
                 long end = System.currentTimeMillis();
                 ((Button) findViewById(R.id.sample_text)).setText("耗时: " + (end - start));
-                outputImage.setImageBitmap(bmp);
+                outputImage.setImageBitmap(out);
             } catch (Exception e) {
                 e.printStackTrace();
             }
